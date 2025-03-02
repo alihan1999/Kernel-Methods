@@ -1,2 +1,2 @@
 # Kernel-Methods
-Special thanks to @ostadgeorge for the motivation :)
+Special thanks to [@ostadgeorge](https://github.com/ostadgeorge) for the motivation :)
