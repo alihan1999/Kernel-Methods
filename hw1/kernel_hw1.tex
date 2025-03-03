@@ -1,0 +1,104 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\title{HDP Notes and Exercise Soultions}
+\author{Holden Caulfield}
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}[theorem]
+\newtheorem{ex}{Exercise}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{tikz}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+
+\newtcolorbox{bx}[1]{skin=bicolor,breakable,leftrule=1mm,toprule=0mm,bottomrule=0mm,rightrule=0mm,colbacklower=red!15,colback=gray!15,sharp corners,colframe=red}
+
+\begin{document}
+	\centering	\section*{Homework 1 Solution}
+	
+	\begin{bx}
+		
+		\begin{ex}
+		Study whether the following kernels are positive definite:
+		\begin{enumerate}
+			\item $\chi = \mathbb{N}, \; K(x,x^\prime)=2^{(x+x^\prime)}$
+			\item $\chi = \mathbb{R}, \; K(x,x^\prime)=\cos(x+x^\prime)$
+			\item $\chi = \mathbb{R}, \; K(x,x^\prime)=\cos(x-x^\prime)$
+		\end{enumerate}
+		\end{ex}
+		\tcblower
+	Assume we have a set of points $X=\{x_1,\dots,x_n\}$.
+	\begin{enumerate}
+		\item We can represent the matrix of K(x,y) with  respect to $X$ as $VV^\top$ where $V=[2^{x_1},\dots,2^{x_n}]^\top$, which is positive semi-definite. Further, it is also symmetric since $2^{(x+y)}=2^{(y+x)}$. Considering these facts, K is positive semi-definite.
+		\item K is not a PD kernel.
+		
+		Consider $X=\{\pi,-\frac{\pi}{2}\}$.
+		The matrix of K with respect to $X$ is not positive semi-definite since it has eigenvalues $1$ and $-1$.
+		
+		\item For every $x_i \in X$, define $v_i=[\cos(x_i),\sin(x_i)]$, and set 
+		\[
+		V = \begin{bmatrix}
+		v_1 \\
+		\vdots \\
+		v_n
+		\end{bmatrix}
+		\]
+		it is easy to check that the matrix of $K$ with respect to $X$ is equal to $VV^\top$, which is positive semi-definite.
+		as for symmetry, we know that $\cos(x-y)=\cos(-(x-y))=\cos(y-x)$.
+		Putting the two together implies that $K$ is a PD kernel.
+		
+	\end{enumerate}
+		\qed
+	\end{bx}
+	
+	\begin{bx}
+		
+		\begin{ex}
+		Consider a p.d. kernel $K:X\times X\rightarrow\mathbb{R}$ such that $K(x,z) \le b^2$ for all $x,z$ in
+		X. Show that $\|f\|_\infty = \sup_{x\in \chi} |f(x)| \le b$ for any function f in the unit ball
+		of the corresponding RKHS.
+		\end{ex}
+		\tcblower
+		Let $\mathbb{H}$ be the RKHS given by the kernel. We know that $K(x,y) = \langle K_x,K_y \rangle$.
+		Setting $x=y$:
+		$$\langle K_x,K_x\rangle=\|K_x\|_\mathbb{H}^2\le b^2 \Rightarrow \|K_x\|_\mathbb{H}\le b $$ for all $x\in \chi$.
+		On the other hand, $f(x)=\langle f,K_x\rangle$ and $\|f\|_\mathbb{H}\le 1$. We have:
+		\[
+		\sup_{x\in \chi} |f(x)| = \sup_{x\in \chi}|\langle f,K_x\rangle| \le \sup_{x\in\chi} \|f\|_\mathbb{H}\|K_x\|_\mathbb{H} \le b
+		\]
+		\qed
+	\end{bx}
+	
+	\begin{bx}
+		
+		\begin{ex}
+		Consider the Gaussian kernel $K: \mathbb{R}^p \times \mathbb{R}^p \rightarrow \mathbb{R}$ such that for all pair of points $x,x^\prime$ in $\mathbb{R}^p$,
+		\[
+		K(x,x^\prime) = e^{-\frac{\alpha}{2}\|x-x^\prime\|^2}
+		\]
+		where $\|.\|$ is the Euclidean norm on $\mathbb{R}^p$. Call $\mathcal{H}$ the RKHS of K and consider its RKHS mapping $\varphi:\mathbb{R}^p \rightarrow \mathcal{H}$ such that $K(x,x^\prime)=\langle\varphi(x),\varphi(x^\prime) \rangle_\mathcal{H}$ for all $x,x^\prime$ in $\mathbb{R}^p$. Show that 
+		\[
+		\|\varphi(x)-\varphi(x^\prime)\|_\mathcal{H} \le \sqrt{\alpha}\|x-x^\prime\|
+		\]
+		The mapping is called non-expansive whenever $\alpha\le 1$.
+		\end{ex}
+		\tcblower
+	\begin{align*}
+	\|\varphi(x)-\varphi(y)\|_\mathcal{H}^2 &= \langle \varphi(x)-\varphi(y),\varphi(x)-\varphi(y)\rangle_\mathcal{H} \\
+	&= 2(1-exp(-\frac{\alpha}{2}\|x-y\|^2)) \\
+	&\le 2(1-(1-\frac{\alpha}{2}\|x-y\|^2)) \\
+	&= \alpha\|x-y\|^2
+	\end{align*}
+taking the square root would complete the proof.
+		\qed
+	\end{bx}
+	
+
+\end{document}
