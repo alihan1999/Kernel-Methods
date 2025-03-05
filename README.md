@@ -5,3 +5,4 @@ Special thanks to [@ostadgeorge](https://github.com/ostadgeorge) for the motivat
 A notebook to experiment ridge regression with various kernels and lambdas
 
 It also includes the implementation of kernel ridge from scratch
+![sample](./images/kernel_ridge.png)
