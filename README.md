@@ -3,3 +3,4 @@ Special thanks to [@ostadgeorge](https://github.com/ostadgeorge) for the motivat
 
 # Kernel Ridge Playground
 A notebook to experiment ridge regression with various kernels and lambdas
+It also includes the implementation of kernel ridge from scratch
