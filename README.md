@@ -41,3 +41,7 @@ When searching in $\mathcal{H}_s$, we know that the second term is equal to zero
 Hence, we reformulate the original problem as
 
 [![\\ \arg\min\limits_{a\in\mathbb{R}^n}\frac{1}{n}(Ka-Y)^\top(Ka-Y)+\lambda a^\top Ka](https://latex.codecogs.com/svg.latex?%5C%5C%20%5Carg%5Cmin%5Climits_%7Ba%5Cin%5Cmathbb%7BR%7D%5En%7D%5Cfrac%7B1%7D%7Bn%7D(Ka-Y)%5E%5Ctop(Ka-Y)%2B%5Clambda%20a%5E%5Ctop%20Ka)](#_)
+
+Using convexity and basic matrix calculus, we can find the optimal $a$ as
+
+[![\\ a=(K+\lambda n I)^{-1}Y](https://latex.codecogs.com/svg.latex?%5C%5C%20a%3D(K%2B%5Clambda%20n%20I)%5E%7B-1%7DY)](#_)
