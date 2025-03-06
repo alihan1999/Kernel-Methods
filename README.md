@@ -21,4 +21,4 @@ where
 
 [![\\ \mathcal{H}_{S}=\{f\in \mathcal{H} | f=\sum_{i=1}^{n}a_iK_{X_i}\}](https://latex.codecogs.com/svg.latex?%5C%5C%20%5Cmathcal%7BH%7D_%7BS%7D%3D%5C%7Bf%5Cin%20%5Cmathcal%7BH%7D%20%7C%20f%3D%5Csum_%7Bi%3D1%7D%5E%7Bn%7Da_iK_%7BX_i%7D%5C%7D)](#_)
 
-Note that $f^\perp(x_i)=\langle f^\perp,K_{x_i} \rangle$
+Note that [![\\ f^\perp(x_i)=\langle f^\perp,K_{x_i} \rangle_{\mathcal{H}} = 0](https://latex.codecogs.com/svg.latex?%5C%5C%20f%5E%5Cperp(x_i)%3D%5Clangle%20f%5E%5Cperp%2CK_%7Bx_i%7D%20%5Crangle_%7B%5Cmathcal%7BH%7D%7D%20%3D%200)](#_)
