@@ -20,3 +20,5 @@ We can write the direct sum [![\\ \mathcal{H}=\mathcal{H}_{S} \oplus \mathcal{H}
 where 
 
 [![\\ \mathcal{H}_{S}=\{f\in \mathcal{H} | f=\sum_{i=1}^{n}a_iK_{X_i}\}](https://latex.codecogs.com/svg.latex?%5C%5C%20%5Cmathcal%7BH%7D_%7BS%7D%3D%5C%7Bf%5Cin%20%5Cmathcal%7BH%7D%20%7C%20f%3D%5Csum_%7Bi%3D1%7D%5E%7Bn%7Da_iK_%7BX_i%7D%5C%7D)](#_)
+
+Note that $f^\perp(x_i)=\langle f^\perp,K_{x_i} \rangle$
