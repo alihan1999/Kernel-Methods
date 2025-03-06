@@ -30,3 +30,7 @@ so
 Using matrix notation, we can write the first term of our objective as 
 
 [![\\ \frac{1}{n}(Ka-Y)^\top(ka-Y)](https://latex.codecogs.com/svg.latex?%5C%5C%20%5Cfrac%7B1%7D%7Bn%7D(Ka-Y)%5E%5Ctop(ka-Y))](#_)
+
+Moreover, note that 
+
+[![\\ \|f\|^2_{\mathcal{H}}=\langle f,f\rangle_\mathcal{H} = \langle f_{\mathcal{H}_s}+ f_{\mathcal{H}^\perp_s},f_{\mathcal{H}_s}+ f_{\mathcal{H}^\perp_s}\rangle_\mathcal{H}=\|f_{\mathcal{H}_s}\|^2_{\mathcal{H}} + \|f_{\mathcal{H}^\perp_s}\|^2_{\mathcal{H}}](https://latex.codecogs.com/svg.latex?%5C%5C%20%5C%7Cf%5C%7C%5E2_%7B%5Cmathcal%7BH%7D%7D%3D%5Clangle%20f%2Cf%5Crangle_%5Cmathcal%7BH%7D%20%3D%20%5Clangle%20f_%7B%5Cmathcal%7BH%7D_s%7D%2B%20f_%7B%5Cmathcal%7BH%7D%5E%5Cperp_s%7D%2Cf_%7B%5Cmathcal%7BH%7D_s%7D%2B%20f_%7B%5Cmathcal%7BH%7D%5E%5Cperp_s%7D%5Crangle_%5Cmathcal%7BH%7D%3D%5C%7Cf_%7B%5Cmathcal%7BH%7D_s%7D%5C%7C%5E2_%7B%5Cmathcal%7BH%7D%7D%20%2B%20%5C%7Cf_%7B%5Cmathcal%7BH%7D%5E%5Cperp_s%7D%5C%7C%5E2_%7B%5Cmathcal%7BH%7D%7D)](#_)
