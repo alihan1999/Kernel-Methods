@@ -26,3 +26,7 @@ Note that [![\\ f^\perp(x_i)=\langle f^\perp,K_{x_i} \rangle_{\mathcal{H}} = 0](
 so 
 
 [![\\ f(x_i)=f_{\mathcal{H}_s}(x_i)=\sum_{j=1}^{n}a_jK(x_i,x_j)](https://latex.codecogs.com/svg.latex?%5C%5C%20f(x_i)%3Df_%7B%5Cmathcal%7BH%7D_s%7D(x_i)%3D%5Csum_%7Bj%3D1%7D%5E%7Bn%7Da_jK(x_i%2Cx_j))](#_)
+
+Using matrix notation, we can write the first term of our objective as 
+
+[![\\ \frac{1}{n}(Ka-Y)^\top(ka-Y)](https://latex.codecogs.com/svg.latex?%5C%5C%20%5Cfrac%7B1%7D%7Bn%7D(Ka-Y)%5E%5Ctop(ka-Y))](#_)
