@@ -8,6 +8,8 @@ It also includes the implementation of kernel ridge from scratch
 
 Here's a sample output:
 
-
 ![sample](./images/kernel_ridge.png)
 
+## What are we doing?!
+
+We are optimzing $argmin\limits{f\in\mathcal{H}}$
