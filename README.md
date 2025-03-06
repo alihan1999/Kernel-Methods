@@ -12,4 +12,4 @@ Here's a sample output:
 
 ## What are we doing?!
 
-We are optimzing $$\arg\min\limits_{f\in\mathcal{H}}$
+We are optimzing $\min\limits_{f\in\mathcal{H}}$
