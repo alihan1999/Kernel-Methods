@@ -19,7 +19,7 @@ We are optimizing:
 We can write the direct sum [![\\ \mathcal{H}=\mathcal{H}_{S} \oplus \mathcal{H}^\perp_{S}](https://latex.codecogs.com/svg.latex?%5C%5C%20%5Cmathcal%7BH%7D%3D%5Cmathcal%7BH%7D_%7BS%7D%20%5Coplus%20%5Cmathcal%7BH%7D%5E%5Cperp_%7BS%7D)](#_)
 where 
 
-[![\\ \mathcal{H}_{S}=\{f\in \mathcal{H} | f=\sum_{i=1}^{n}a_iK_{X_i}\}](https://latex.codecogs.com/svg.latex?%5C%5C%20%5Cmathcal%7BH%7D_%7BS%7D%3D%5C%7Bf%5Cin%20%5Cmathcal%7BH%7D%20%7C%20f%3D%5Csum_%7Bi%3D1%7D%5E%7Bn%7Da_iK_%7BX_i%7D%5C%7D)](#_)
+[![\\ \mathcal{H}_{S}=\{f\in \mathcal{H} | f=\sum_{i=1}^{n}a_iK_{X_i},a_i\in\mathrm{R}\}](https://latex.codecogs.com/svg.latex?%5C%5C%20%5Cmathcal%7BH%7D_%7BS%7D%3D%5C%7Bf%5Cin%20%5Cmathcal%7BH%7D%20%7C%20f%3D%5Csum_%7Bi%3D1%7D%5E%7Bn%7Da_iK_%7BX_i%7D%5C%7D)](#_)
 
 Note that [![\\ f_{\mathcal{H}^\perp_s}(x_i)=\langle f_{\mathcal{H}^\perp_s},K_{x_i}\rangle=0](https://latex.codecogs.com/svg.latex?%5C%5C%20f_%7B%5Cmathcal%7BH%7D%5E%5Cperp_s%7D(x_i)%3D%5Clangle%20f_%7B%5Cmathcal%7BH%7D%5E%5Cperp_s%7D%2CK_%7Bx_i%7D%5Crangle%3D0)](#_)
 
