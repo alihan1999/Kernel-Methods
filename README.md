@@ -29,7 +29,7 @@ so
 
 Using matrix notation, we can write the first term of our objective as 
 
-[![\\ \frac{1}{n}(Ka-Y)^\top(Ka-Y)](https://latex.codecogs.com/svg.latex?%5C%5C%20%5Cfrac%7B1%7D%7Bn%7D(Ka-Y)%5E%5Ctop(ka-Y))](#_)
+[![\\  \frac{1}{n}(Ka-Y)^\top(Ka-Y) \\ ](https://latex.codecogs.com/svg.latex?%5C%5C%20%20%5Cfrac%7B1%7D%7Bn%7D(Ka-Y)%5E%5Ctop(Ka-Y)%20%5C%5C%20)](#_)
 
 Moreover, note that 
 
