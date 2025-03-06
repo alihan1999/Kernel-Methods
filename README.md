@@ -34,3 +34,5 @@ Using matrix notation, we can write the first term of our objective as
 Moreover, note that 
 
 [![\\ \|f\|^2_{\mathcal{H}}=\langle f,f\rangle_\mathcal{H} = \langle f_{\mathcal{H}_s}+ f_{\mathcal{H}^\perp_s},f_{\mathcal{H}_s}+ f_{\mathcal{H}^\perp_s}\rangle_\mathcal{H}=\|f_{\mathcal{H}_s}\|^2_{\mathcal{H}} + \|f_{\mathcal{H}^\perp_s}\|^2_{\mathcal{H}}](https://latex.codecogs.com/svg.latex?%5C%5C%20%5C%7Cf%5C%7C%5E2_%7B%5Cmathcal%7BH%7D%7D%3D%5Clangle%20f%2Cf%5Crangle_%5Cmathcal%7BH%7D%20%3D%20%5Clangle%20f_%7B%5Cmathcal%7BH%7D_s%7D%2B%20f_%7B%5Cmathcal%7BH%7D%5E%5Cperp_s%7D%2Cf_%7B%5Cmathcal%7BH%7D_s%7D%2B%20f_%7B%5Cmathcal%7BH%7D%5E%5Cperp_s%7D%5Crangle_%5Cmathcal%7BH%7D%3D%5C%7Cf_%7B%5Cmathcal%7BH%7D_s%7D%5C%7C%5E2_%7B%5Cmathcal%7BH%7D%7D%20%2B%20%5C%7Cf_%7B%5Cmathcal%7BH%7D%5E%5Cperp_s%7D%5C%7C%5E2_%7B%5Cmathcal%7BH%7D%7D)](#_)
+
+When searching in $\mathcal{H}_s$, we know that the second term is equal to zero, and the optimal $f$ lies in the subspace $\mathcal{H}_s$, which means that we can now work with a finite dimensional space aka $\mathcal{H}_s$.
