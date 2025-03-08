@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\title{HDP Notes and Exercise Soultions}
+\author{Holden Caulfield}
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}[theorem]
+\newtheorem{ex}{Problem}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{tikz}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+
+\newtcolorbox{bx}[1]{skin=bicolor,breakable,leftrule=1mm,toprule=0mm,bottomrule=0mm,rightrule=0mm,colbacklower=red!15,colback=gray!15,sharp corners,colframe=red}
+
+\begin{document}
+	\centering	\section*{Homework 2 Solution}
+	
+	\begin{bx}
+		
+		\begin{ex}
+		Let $\mathcal{X}$ be a set and $\mathcal{F}$ be a Hilbert space. Let $\Psi: \mathcal{X} \rightarrow \mathcal{F}$, and $K: \mathcal{X}\times\mathcal{X} \rightarrow \mathbb{R}$
+		be:
+		\[
+		\forall x,x^\prime\in\mathcal{X},\;\;\; K(x,x^\prime)=\langle \Psi(x),\Psi(x^\prime)\rangle_{\mathcal{F}}
+		\]
+		Show that K is a positive definite kernel on $\mathcal{X}$, and describe its RKHS $\mathcal{H}$.
+		\end{ex}
+		\tcblower
+		\textcolor{red}{Step 1 (Positive Definiteness)}
+		
+		 for any set $X=\{x_1,\dots,x_n\}$ of points in $\mathcal{X}$, the matrix of $K$ is the gram matrix of $\{\Psi(x_1),\dots,\Psi(x_n)\}$. Further, we know that gram matrices are positive semi-definite and symmetric (as long as the inner product is real-valued), which implies that $K$ is a PD kernel. \\ \\
+		 	\textcolor{red}{Step 2 (Candidate RKHS)}
+		 
+		Assume that we have $w=\sum\limits_{i}a_i\Psi(x_i)$.
+		
+		We have:
+		 \begin{align*}
+		 f_w(x)=\sum\limits_{i}a_iK(x_i,x)&=\sum\limits_{i}a_i\langle \Psi(x_i),\Psi(x^\prime)\rangle_\mathcal{F} \\
+		 &= \langle \sum\limits_{i}a_i\Psi(x_i),\Psi(x^\prime)\rangle_\mathcal{F} \\
+		 &=\langle w,\Psi(x)\rangle_\mathcal{F}
+		 \end{align*}
+	 
+	 Let $\mathcal{H}$ be the set of all such functions endowed with the inner product:
+	 \[
+	 \langle f_w,f_{w^\prime}\rangle_\mathcal{H}=\langle w,w^\prime \rangle_\mathcal{F}
+	 \]
+	 \textcolor{red}{Step 3 (Hilbert Check)}
+	 
+	 The candidate RKHS is isomorphic to $\mathcal{F}$ with the mapping $\Phi:w\rightarrow f_w$, hence it is indeed a Hilbert space. \\ 
+	 \textcolor{red}{Step 4 (RKHS properties)}
+	 
+	 First, we know that 
+	 \[
+	 K_x:y\rightarrow\langle \Psi(x),\Psi(y)\rangle_\mathcal{F} = f_{\Psi(x)} \in \mathcal{H}
+	 \]
+	 Second
+	 \[
+	 f_w(x)=\langle w,\Psi(x)\rangle_\mathcal{F}=\langle f_w,f_{\Psi(x)}\rangle_\mathcal{H}
+	 \]
+	 on the other hand
+	 \[
+	 f_{\Psi(x)}:y\rightarrow\langle\Psi(x),\Psi(y)\rangle_\mathcal{F}
+	 \]
+	 Which is the same as $K_x$, hence:
+	 \[
+	 f_w(x)=\langle f_w,K_x\rangle_\mathcal{H}
+	 \]
+	 Therefore, the reproducing property holds as well, which implies that our candidate is indeed the RKHS.
+	 \qed
+	\end{bx}
+
+
+	\begin{bx}
+	
+	\begin{ex}
+			Prove that for any p.d. kernel K on a space $\mathcal{X} $, a function $f: \mathcal{X} \rightarrow \mathbb{R}$ belongs to the RKHS with kernel $K$ iff there exists $\lambda>0$ such that $K^\prime(x,y)=K(x,y)-\lambda f(x)f(y)$ is p.d.
+	\end{ex}
+	\tcblower
+	$\Rightarrow$
+	
+	Assume that $\mathcal{H}$ is the RKHS represented by $K$, and let $\langle .,.\rangle$ denote the inner product of $\mathcal{H}$, and $\|.\|$ denote the induced norm.
+	
+	
+	We can rewrite the relation as $\langle K_x,K_y \rangle -\lambda \langle f,K_x\rangle \langle f,K_y\rangle$ since $f\in \mathcal{H}$.
+	
+	Note that $ K_x-\frac{\alpha\langle f,K_x\rangle f}{\|f\|}$ is a member of $\mathcal{H}$ for $\alpha \in \mathbb{R}$.
+	
+	We have:
+	$$
+		\langle K_x-\frac{\alpha\langle f,K_x\rangle f}{\|f\|}, K_y-\frac{\alpha\langle f,K_y\rangle f}{\|f\|}\rangle 
+	$$
+	
+	$$
+	= \langle K_x,K_y\rangle + \alpha^{2}\langle f,K_x\rangle\langle f,K_y\rangle - 2\alpha 
+	\frac{\langle f,K_x\rangle \langle f,K_y\rangle}{\|f\|}
+	$$
+	
+	$$
+	= \langle K_x,K_y\rangle + (\alpha^2-\frac{2\alpha}{\|f\|})\langle f,K_x\rangle \langle f,K_y\rangle
+	$$
+	Setting $\lambda = (\alpha^2-\frac{2\alpha}{\|f\|})$ where $\alpha<\frac{2}{\|f\|}$, gives us a relation similar to that of $K^\prime$.
+	
+	Now, consider a set of points $X=\{x_1,\dots,x_n\}$, and set
+	
+	 $V=\{v_1,\dots,v_n\}$ where $v_i= K_{x_i}-\frac{\alpha\langle f,K_{x_i}\rangle f}{\|f\|}$. The matrix of $K^\prime$ with respect to $X$ is positive semi-definite, since it is equal to the gram matrix of $V$, and gram matrices are positive semi-definite.This implies that $K^\prime$ is a PD kernel (Mercer's theorem).\\ \\
+	 $\Leftarrow$
+	 
+	 Let $\mathcal{H^\prime}$ denote the RKHS represented by $K^\prime$. For any function $g\in\mathcal{H}^\prime$ we have:
+	 \begin{align*}
+	 g(x)&=\sum\limits_{i}a_iK^\prime(x_i,x) =\sum\limits_{i}a_iK(x_i,x) - \lambda f(x)\sum\limits_{i}a_if(x_i)
+	 \end{align*}
+ or equivalently:
+ \[
+ f(x) = \sum\limits_{i}\frac{K(x_i,x)}{\lambda f(x_i)}-\frac{g(x)}{\lambda\sum\limits_{i}a_if(x_i)}
+ \]
+ letting $g$ be the zero function, we can see that:
+ \[
+ f(x)=\sum\limits_{i}c_iK(x_i,x)
+ \]
+ which means that $f\in\mathcal{H}$, where $\mathcal{H}$ has the same definition as the last part of the proof.
+ \qed
+\end{bx}
+	
+	
+\end{document}
