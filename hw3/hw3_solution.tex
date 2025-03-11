@@ -1,0 +1,110 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\title{HDP Notes and Exercise Soultions}
+\author{Holden Caulfield}
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}[theorem]
+\newtheorem{ex}{Problem}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{tikz}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+
+\newtcolorbox{bx}[1]{skin=bicolor,breakable,leftrule=1mm,toprule=0mm,bottomrule=0mm,rightrule=0mm,colbacklower=red!15,colback=gray!15,sharp corners,colframe=red}
+
+\begin{document}
+	\centering	\section*{Homework 3 Solution}
+	
+	\begin{bx}
+		
+		\begin{ex}
+	Given two vectors of real numbers $X=\{x_1,\dots,x_n\} \in \mathbb{R}^n$ and $Y=\{y_1,\dots,y_n\} \in \mathrm{R}^n$, the covariance between X and Y is defined as
+	\[
+	cov_n(X,Y)=\mathrm{E}_n(XY)-\mathrm{E}_n(X)\mathrm{E}_n(Y)
+	\]
+	where $\mathrm{E}_n(U)=(\sum_{i=1}^{n}u_i)/n$. The covariance is useful to detect linear relationships between X and Y. In order to extend this measure to potential
+	nonlinear relationships between X and Y, we consider the following criterion:
+	\[
+	C_n^K(X,Y)=\max\limits_{f,g\in\mathcal{B}_K} cov_n(f(X),g(Y))
+	\]
+	where $K$ is a positive definite kernel on $\mathbb{R}$, $\mathcal{B}_K$ is the unit ball of the RKHS of K, and $f(U)=(f(u_1 ),\dots,f(u_n))$ for a vector $U=(u_1,\dots,u_n)$.
+	\begin{enumerate}
+		
+		\item Express simply $C_n^K(X,Y)$ for the linear kernel $K(a,b)=ab$.
+		
+		\item For a general kernel $K$, express $C_n^K(X,Y)$ in terms of the Gram matrices of $X$ and $Y$.
+		
+	\end{enumerate}
+		\end{ex}
+		\tcblower
+		
+		Let's begin with the general case and then check for the linear kernel.
+		
+		Assuming that our data is centered, we can write $C_n^K(X,Y)$ as
+		\[
+		\min\limits_{f,g\in\mathcal{B}_K}-\sum_{i=1}^{n}f(x_i)g(y_i)
+		\]
+		note that the sum can be written in the matrix form $\alpha^\top K_xK_y\beta$, thus the Lagrangian can be written as:
+		$$
+		\mathcal{L}(\alpha,\beta,\lambda_x,\lambda_y)=
+		-\alpha^\top K_xK_y\beta+\lambda_x(\alpha^\top K_x\alpha-1)+\lambda_y(\beta^\top K_y\beta-1)
+		$$
+		setting the partial derivatives with respect to $\alpha$ and $\beta$ equal to zero yields:
+		\begin{align}\label{eq:1}
+		2\lambda_x \alpha - K_y\beta=0  \nonumber \\
+		2\lambda_y \beta - K_x\alpha=0
+		\end{align}
+multiply the first equation by $\alpha^\top K_x$ and the second one by $\beta^\top K_y$
+\[
+2\lambda_x \alpha^\top K_x\alpha - \alpha^\top K_xK_y\beta =0
+\]
+\[
+2\lambda_y \beta^\top K_y\beta - \beta^\top K_yK_x\alpha =0
+\]
+	subtracting the two, we get:
+	\[
+	\lambda_x \alpha^\top K_x\alpha = \lambda_y \beta^\top K_y\beta=\lambda_x=\lambda_y=\lambda
+	\]
+	we can thus rewrite (\ref{eq:1}) in matrix from:
+	\[
+	M
+\begin{bmatrix}
+	\alpha \\
+	\beta
+\end{bmatrix} = 
+\lambda^\prime\begin{bmatrix}
+	\alpha \\
+	\beta
+\end{bmatrix}
+	\]
+	where $\lambda^\prime=2\lambda$ and $M=\begin{bmatrix}
+		0& K_y \\
+		K_x& 0
+	\end{bmatrix}$. Therefore, the answer would be given by the eigen pairs of $M$.
+\[
+det(M-\lambda^\prime I)=0 \Rightarrow det({\lambda^\prime}^2I-K_yK_x)=0
+\]
+so $\lambda^\prime=\sqrt{\lambda^{\prime\prime}}$ where $\lambda^{\prime\prime}$ is an eigenvalue of $K_yK_x$. note that $\lambda^{\prime\prime}$ is non-negative since the matrix is positive semi-definite. this means that the answer is given by the eigenvectors of $M$ with eigenvalue $\sqrt{\lambda^{\prime\prime}}$.
+\\ \\
+Now we return to the first question. Note that $K_x=XX^\top$ for the linear kernel.
+so $\lambda^{\prime\prime}$ is the eigenvalue of $YY^\top XX^\top$.
+
+note that $Y^\top X$ is a scaler, denoting it with $r$, the matrix can be written as $rYX^\top$.
+
+note that $YX^\top$ is a rank-one matrix, which means that it has at most one non-zero eigenvalue, which is given by the trace. Further, the trace of $YX^\top$ is $r$, which implies that $\lambda^{\prime\prime}=r^2$
+
+This means that the answer is given by the eigenvectors of $M$ with eigenvalue $r$.
+		\qed
+	\end{bx}
+	
+	
+	
+\end{document}
